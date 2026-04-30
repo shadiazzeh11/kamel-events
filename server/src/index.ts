@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import type { HealthResponse } from "../../shared/types";
+import type { HealthResponse } from "../../shared/types.js";
 
 const app = express();
 app.use(cors());
