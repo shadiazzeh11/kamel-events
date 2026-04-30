@@ -1,0 +1,14 @@
+{
+  "name": "kamel-events",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Take-home assignment for Kamel Ride: a TypeScript system that collects events and displays analytics in a dashboard.",
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "test": "npm --prefix server run test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
