@@ -125,18 +125,27 @@ function App() {
     );
   }
 
-  // Real components land in steps 3.3–3.8; placeholders here keep the
-  // layout shape visible while the shell is in place.
   return (
     <div className="min-h-screen bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6 py-8">
+        <header className="mb-8">
+          <h1 className="text-2xl font-semibold text-neutral-900">
+            kamel-events
+          </h1>
+          <p className="mt-1 text-sm text-neutral-600">
+            Marketplace analytics dashboard
+          </p>
+        </header>
+
         <HeaderCards overview={overview} />
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           <EventsOverTimeChart data={overview.events_by_day} />
           <FunnelChart funnel={funnel} />
           <EventTypeChart data={overview.events_by_type} />
           <TopUsersTable topUsers={topUsers} />
         </div>
+
         <LiveEventStream events={recentEvents} />
       </div>
     </div>
