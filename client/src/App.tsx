@@ -14,6 +14,7 @@ import {
 import { HeaderCards } from "./components/HeaderCards";
 import { EventsOverTimeChart } from "./components/EventsOverTimeChart";
 import { FunnelChart } from "./components/FunnelChart";
+import { EventTypeChart } from "./components/EventTypeChart";
 
 const POLL_INTERVAL_MS = 5000;
 
@@ -131,9 +132,7 @@ function App() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           <EventsOverTimeChart data={overview.events_by_day} />
           <FunnelChart funnel={funnel} />
-          <div className="bg-white border border-neutral-200 rounded-lg p-6">
-            <p className="text-xs text-neutral-500">event types</p>
-          </div>
+          <EventTypeChart data={overview.events_by_type} />
           <div className="bg-white border border-neutral-200 rounded-lg p-6">
             <p className="text-xs text-neutral-500">top users ({topUsers.users.length})</p>
           </div>
