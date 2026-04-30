@@ -108,6 +108,13 @@ function pickTimestamp(): string {
     Math.floor(Math.random() * 60),
     0,
   );
+  // Replacing the hour can push an event for "today" past the current
+  // wall-clock time, producing a future-dated timestamp that would
+  // sort above genuinely-fresh POSTs in the live stream. Clamp to now
+  // so seeded data stays in the past where it belongs.
+  if (day.getTime() > now) {
+    return new Date(now - Math.floor(Math.random() * 60_000)).toISOString();
+  }
   return day.toISOString();
 }
 
