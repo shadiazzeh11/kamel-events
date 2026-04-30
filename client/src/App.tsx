@@ -11,6 +11,7 @@ import {
   fetchTopUsers,
   fetchRecentEvents,
 } from "./api";
+import { HeaderCards } from "./components/HeaderCards";
 
 const POLL_INTERVAL_MS = 5000;
 
@@ -124,26 +125,7 @@ function App() {
   return (
     <div className="min-h-screen bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-          <div className="bg-white border border-neutral-200 rounded-lg p-6">
-            <p className="text-xs text-neutral-500">header cards</p>
-            <p className="text-3xl font-semibold text-neutral-900 mt-2">
-              {overview.total_events}
-            </p>
-          </div>
-          <div className="bg-white border border-neutral-200 rounded-lg p-6">
-            <p className="text-xs text-neutral-500">unique users</p>
-            <p className="text-3xl font-semibold text-neutral-900 mt-2">
-              {overview.unique_users}
-            </p>
-          </div>
-          <div className="bg-white border border-neutral-200 rounded-lg p-6">
-            <p className="text-xs text-neutral-500">last 24h</p>
-            <p className="text-3xl font-semibold text-neutral-900 mt-2">
-              {overview.events_last_24h}
-            </p>
-          </div>
-        </div>
+        <HeaderCards overview={overview} />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           <div className="bg-white border border-neutral-200 rounded-lg p-6">
             <p className="text-xs text-neutral-500">events over time</p>
