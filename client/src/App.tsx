@@ -15,6 +15,7 @@ import { HeaderCards } from "./components/HeaderCards";
 import { EventsOverTimeChart } from "./components/EventsOverTimeChart";
 import { FunnelChart } from "./components/FunnelChart";
 import { EventTypeChart } from "./components/EventTypeChart";
+import { TopUsersTable } from "./components/TopUsersTable";
 
 const POLL_INTERVAL_MS = 5000;
 
@@ -133,9 +134,7 @@ function App() {
           <EventsOverTimeChart data={overview.events_by_day} />
           <FunnelChart funnel={funnel} />
           <EventTypeChart data={overview.events_by_type} />
-          <div className="bg-white border border-neutral-200 rounded-lg p-6">
-            <p className="text-xs text-neutral-500">top users ({topUsers.users.length})</p>
-          </div>
+          <TopUsersTable topUsers={topUsers} />
         </div>
         <div className="bg-white border border-neutral-200 rounded-lg p-6">
           <p className="text-xs text-neutral-500">live stream ({recentEvents.length} events)</p>
