@@ -115,8 +115,8 @@ are cheaper in SQL (events-by-day, by-type, top users) live in
 Recharts' built-in funnel component is quirky and resists styling.
 Four horizontal bars with widths proportional to count and
 conversion percentages computed inline gave us full control of the
-visual register in less code. Cleaner, faster, more honest about
-what's actually being shown.
+visual register in less code. Cleaner, faster, and I had full
+control over the bar widths and label placement.
 
 ### Why Tailwind v3, not v4
 
@@ -139,6 +139,8 @@ fails the build in both apps until both are updated. Zero `any`
 in the codebase.
 
 ## Project structure
+
+```
 kamel-events/
 ├── server/
 │   ├── src/
@@ -160,6 +162,7 @@ kamel-events/
 ├── shared/
 │   └── types.ts                 # Event + analytics response shapes
 └── docs/screenshots/            # README images
+```
 
 ## What I deliberately didn't build, and what I'd add next
 
@@ -208,7 +211,7 @@ order I'd add it next.
 
 ## Notes on tooling and context
 
-Built primarily in Cursor with Claude Code as a pair-programmer for
+Built primarily with Claude Code as a pair-programmer for
 scaffolding, debugging, and tightening prose. Architecture decisions,
 scope choices, and the README are mine.
 
