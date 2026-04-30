@@ -12,6 +12,7 @@ import {
   fetchRecentEvents,
 } from "./api";
 import { HeaderCards } from "./components/HeaderCards";
+import { EventsOverTimeChart } from "./components/EventsOverTimeChart";
 
 const POLL_INTERVAL_MS = 5000;
 
@@ -127,9 +128,7 @@ function App() {
       <div className="max-w-7xl mx-auto px-6 py-8">
         <HeaderCards overview={overview} />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          <div className="bg-white border border-neutral-200 rounded-lg p-6">
-            <p className="text-xs text-neutral-500">events over time</p>
-          </div>
+          <EventsOverTimeChart data={overview.events_by_day} />
           <div className="bg-white border border-neutral-200 rounded-lg p-6">
             <p className="text-xs text-neutral-500">funnel ({funnel.steps.length} steps)</p>
           </div>
